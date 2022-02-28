@@ -3,15 +3,21 @@ package pl.manczak.ksb2;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("product")
+//@RequestMapping("product")
 public class ProductApi {
+    @GetMapping("/products")
+    public String getProduct(){
+        return "Hello World with GET";
 
-    //PARAMETR
+
+
+
+//    //PARAMETR
 //    @GetMapping
 //    public String getProducts(@RequestParam String name,@RequestParam(required = false,defaultValue = "") String surname){
 //        return "Hello " + name+ ""+surname;
-//
-//    }
+
+    }
 
     // PATH
 //    @GetMapping("/{name}")
@@ -34,18 +40,27 @@ public class ProductApi {
 
     //}
 
-    @PostMapping()
+
+//    @GetMapping
+//public String getProduct (@RequestParam String name,
+//                          @RequestHeader(required = false, defaultValue = "")String surname){
+//    return "Hello "+ name+ ""+surname;
+
+//}
+
+
+    @PostMapping("/products")
     public String addProduct(){
         return "Hello World with POST";
 
     }
 
-    @PutMapping()
+    @PutMapping("/products")
     public String modProduct(){
         return "Hello World with PUT";
 
     }
-    @DeleteMapping()
+    @DeleteMapping("/products")
     public String removeProduct(){
         return "Hello World with DELETE";
 
